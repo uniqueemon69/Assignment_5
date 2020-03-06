@@ -18,7 +18,8 @@
                 $img_name = uniqid().".jpg"; //gives each uploaded file a unique name so that they may not collide
                 move_uploaded_file($tmp, "photos/".$img_name); //upload(the temporary directory that was create when file uploaded, the destiantion)
             }
-            else echo "Not supported";
+            else if($_FILES['image']['size'] ==0) else echo "Pls choose a file";
+            else echo "File Not supported";
         }
     ?>
     <form method="POST" action="" enctype="multipart/form-data">
